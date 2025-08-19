@@ -1,26 +1,28 @@
-# 📝 newBlog
+#  Contact Form Demo
 
-newBlog — bu Django asosida yozilgan blog platformasi bo‘lib, foydalanuvchilar post yaratishi, izoh qoldirishi va ulardan foydalanishi mumkin.
-
----
-
-## 🚀 Texnologiyalar
-
-- **Backend**: Django 5+
-- **Frontend**: HTML, CSS, Bootstrap
-- **Database**: PostgreSQL (Render uchun sozlangan)
-- **Deployment**: Render
-- **Storage**: Cloudinary (rasmlar va media fayllar uchun)
+Contact Form Demo — bu **Django** asosida yozilgan oddiy kontakt forma loyihasi.  
+Foydalanuvchilar ism, familiya, telefon raqam, email va xabarni yuborishlari mumkin. Yuborilgan xabarlar ma’lumotlar bazasiga saqlanadi va `/xabarlar/` sahifasida ko‘rinadi.
 
 ---
 
-## ⚙️ O‘rnatish va ishga tushirish
+##  Texnologiyalar
+
+- **Backend**: Django 5.x  
+- **Frontend**: HTML, CSS, Bootstrap  
+- **Database**: SQLite (odatdagi konfiguratsiya)  
+- (Agar PostgreSQL/Render ishlatilsa, bu qismni kengaytiring)
+
+---
+
+##  O‘rnatish va ishga tushirish
 
 ### 1. Reponi klonlash
 ```bash
-git clone https://github.com/<your-username>/newBlog.git
-cd newBlog
+git clone https://github.com/OktamTurgun/contact_form_demo.git
+cd contact_form_demo
+
 ```
+
 ### 2. Virtual environment yaratish
 ```bash
 
@@ -37,8 +39,6 @@ pip install -r requirements.txt
 
 DEBUG=True
 SECRET_KEY=your-secret-key
-DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME
-CLOUDINARY_URL=cloudinary://API_KEY:API_SECRET@CLOUD_NAME
 
 ### 5. Migratsiyalarni qo‘llash
 ```bash
@@ -65,33 +65,34 @@ python manage.py runserver
 
 4. Deploy qiling 🎉
 
+## URL’lar
+
+- / → Kontakt forma (xabar yuborish)
+
+- /xabarlar/ → Yuborilgan xabarlar ro‘yxati
+
 ## Fayl struktura
 ```bash
 
-newBlog/
-│── blog/             
-│── users/          
-│── static/       
-│── media/          
-│── templates/         
-│── requirements.txt  
-│── manage.py
-│── README.md
+contact_form_demo/
+│── contacts/
+│── config/
+│── templates/
+│── .gitignore
 │── LICENSE
+│── README.md
+│── requirements.txt
+│── db.sqlite3
+│── manage.py
 
 ```
 ## Xususiyatlar
-- Post yaratish, tahrirlash va o‘chirish
 
-- Postlarga izoh yozish
+- Kontakt forma orqali xabar yuborish
 
-- Foydalanuvchi ro‘yxatdan o‘tishi va login qilish
+- Xabarlarni ma’lumotlar bazasida saqlash
 
-- Admin panel orqali boshqaruv
-
-- Cloudinary orqali rasm/media saqlash
-
-- Render’da deploy qilish
+- Yuborilgan xabarlarni jadval ko‘rinishida ko‘rsatish (Bootstrap bilan)
 
 ## Litsenziya
 Ushbu loyiha [MIT License](./LICENSE) asosida tarqatiladi.
