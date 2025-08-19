@@ -1,0 +1,43 @@
+{% extends "contacts/base.html" %} {% block title %}Kontakt forma{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-7">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h1 class="h4 mb-3">Bog‘lanish</h1>
+        <form method="post" novalidate>
+          {% csrf_token %}
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Ism</label>
+              {{ form.first_name }}
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Familiya</label>
+              {{ form.last_name }}
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Telefon raqam</label>
+              {{ form.phone }}
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email manzil</label>
+              {{ form.email }}
+            </div>
+            <div class="col-12">
+              <label class="form-label">Yuborilgan xabar</label>
+              {{ form.message }}
+            </div>
+          </div>
+          <div class="mt-3 d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Jo‘natish</button>
+            <a href="{% url 'messages' %}" class="btn btn-outline-secondary"
+              >Xabarlar</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

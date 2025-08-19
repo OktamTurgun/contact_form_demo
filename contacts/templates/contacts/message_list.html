@@ -1,0 +1,39 @@
+{% extends "contacts/base.html" %} {% block content %}
+<h2 class="mb-3">Xabarlar ro'yxati</h2>
+
+<table
+  class="table table-bordered table-striped"
+  style="table-layout: fixed; width: 100%"
+>
+  <thead class="table-light">
+    <tr>
+      <th style="width: 50px">№</th>
+      <th style="width: 120px">Ism</th>
+      <th style="width: 150px">Familiya</th>
+      <th style="width: 150px">Telefon raqam</th>
+      <th style="width: 200px">Email</th>
+      <th style="width: 400px">Yuborilgan xabar</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for msg in messages %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ msg.first_name }}</td>
+      <td>{{ msg.last_name }}</td>
+      <td>{{ msg.phone }}</td>
+      <td>{{ msg.email }}</td>
+      <td class="xabar">{{ msg.message }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<style>
+  .xabar {
+    max-width: 400px;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+</style>
+{% endblock %}
